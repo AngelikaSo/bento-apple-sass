@@ -1,7 +1,16 @@
-body {
-  background-color: #3498db;
+:root {
+  font-size: 16px;
   font-family: Arial, sans-serif;
 }
-body h1 {
-  color: #217dbb;
+
+body {
+  background: #efefef;
+}
+body p {
+  background: linear-gradient(to right, #c9a9e5, #442f7a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.25rem;
+  font-weight: 800;
 }/*# sourceMappingURL=styles.css.map */
