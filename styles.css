@@ -6,11 +6,35 @@
 body {
   background: #efefef;
 }
-body p {
+
+p {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.grid__item-text--lg {
   background: linear-gradient(to right, #c9a9e5, #442f7a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: 1.25rem;
-  font-weight: 800;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(4, minmax(190px, 1fr));
+  gap: 5px;
+  width: auto;
+  height: auto;
+}
+
+.grid__item {
+  background: #efefef;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */

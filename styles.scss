@@ -1,5 +1,5 @@
-$primary-color: #222;
-$background-color: #efefef;
+$primary: #222;
+$background: #efefef;
 $gradient: linear-gradient(to right, #c9a9e5, #442f7a);
 
 $font-size-sm: 0.875rem; // 14px
@@ -7,20 +7,59 @@ $font-size-md: 1rem; // 16px
 $font-size-lg: 1.25rem; // 20px
 $font-size-xl: 1.5rem; // 24px
 
+$font-weight-light: 300; // Light
+$font-weight-regular: 400; // Regular
+$font-weight-medium: 500; // Medium
+$font-weight-bold: 700; // Bold
+$font-weight-black: 900; // Black
+
+$border-radious: 5px;
+$gap: 5px;
+
+@mixin text-gradient {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin flex-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 :root {
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
 
 body {
-  background: $background-color;
+  background: $background;
+}
 
-  p {
-    background: $gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-size: $font-size-lg;
-    font-weight: 800;
-  }
+p {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-light;
+}
+.grid__item-text--lg {
+  @include text-gradient;
+  font-weight: $font-weight-bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(4, minmax(190px, 1fr));
+  gap: $gap;
+  width: auto;
+  height: auto;
+}
+
+.grid__item {
+  background: $background;
+  border-radius: $border-radious;
+  @include flex-centered;
 }
