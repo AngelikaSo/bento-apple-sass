@@ -7,12 +7,12 @@ $font-size-md: 1.5rem; // 24px
 $font-size-lg: 2rem; // 32px
 $font-size-xl: 3.5rem; // 40px
 
-$font-weight-light: 300; // Light
-$font-weight-bold: 700; // Bold
+$font-weight-light: 300;
+$font-weight-bold: 700;
 
-$border-radious: 25px;
-$grid-gap: 5px;
-$component-margin: 5px;
+$border-radious: 1.5rem;
+$grid-gap: 0.31rem;
+$component-margin: 0.32rem;
 
 @mixin text-gradient {
   background: $gradient;
@@ -42,8 +42,8 @@ $component-margin: 5px;
 }
 
 @mixin img {
-  max-height: 100px;
-  margin-bottom: 10px;
+  max-height: 6.25rem;
+  margin-bottom: 0.62rem;
 }
 
 @mixin grid-item(
@@ -117,7 +117,17 @@ p {
   background: $background;
   border-radius: $border-radious;
   @include flex-centered;
-  height: 190px;
+  height: 11.9rem;
+}
+
+.grid__item--center {
+  @include flex-centered(
+    $flex: flex,
+    $flex-direction: column,
+    $justify-content: center,
+    $align-items: center,
+    $text-align: center
+  );
 }
 
 .grid__item-img {
@@ -125,8 +135,13 @@ p {
 }
 
 .grid__item-img--hero {
-  max-width: 100%;
+  max-width: 200%;
   max-height: 100%;
+}
+
+.grid__item-img--aside {
+  max-height: 9.4rem;
+  margin-bottom: 2.5rem;
 }
 
 .grid__item--1 {
@@ -149,67 +164,38 @@ p {
   @include grid-item(6, 2);
 }
 
-.grid__item--center {
-  @include flex-centered(
-    $flex: flex,
-    $flex-direction: column,
-    $justify-content: center,
-    $align-items: center,
-    $text-align: center
-  );
-}
-
-.grid__item--justify {
-  @include flex-centered(
-    $flex: flex,
-    $flex-direction: column,
-    $justify-content: center,
-    $align-items: center,
-    $text-align: center
-  );
-}
-
-.grid__item--justify > p {
-  margin-bottom: 5px;
-}
-
 .grid__item--6 {
-  @include grid-item(1, 2, 2, calc(190px * 1.5));
+  @include grid-item(1, 2, 2, calc(11.9rem * 1.5));
 }
 
 .grid__item--7 {
-  @include grid-item(3, 3, 3, calc(190px * 2.5 + 5px));
+  @include grid-item(3, 3, 3, calc(11.9rem * 2.5 + $grid-gap));
 }
 
 .grid__item--8 {
-  @include grid-item(6, 1, 2, calc(190px * 2 + 5px));
-}
-
-.grid__item-img--aside {
-  max-height: 150px;
-  margin-bottom: 40px;
+  @include grid-item(6, 1, 2, calc(11.9rem * 2 + $grid-gap));
 }
 
 .grid__item--9 {
-  @include grid-item(7, 1, 2, calc(190px * 2 + 5px));
+  @include grid-item(7, 1, 2, calc(11.9rem * 2 + $grid-gap));
 }
 
 .grid__item--10 {
-  @include grid-item(1, 1, 1, 190px, -100px);
+  @include grid-item(1, 1, 1, 11.9rem, -100px);
 }
 
 .grid__item--11 {
-  @include grid-item(2, 1, 1, 190px, -100px);
+  @include grid-item(2, 1, 1, 11.9rem, -100px);
 }
 
 .grid__item--12 {
-  @include grid-item(1, 2, 1, calc(190px * 0.5), -100px);
+  @include grid-item(1, 2, 1, calc(11.9rem * 0.5), -100px);
 }
 
 .grid__item--13 {
-  @include grid-item(3, 3, 1, calc(190px * 0.5), -100px);
+  @include grid-item(3, 3, 1, calc(11.9rem * 0.5), -100px);
 }
 
 .grid__item--14 {
-  @include grid-item(6, 2, 2, 190px, -195px);
+  @include grid-item(6, 2, 2, 11.9rem, -195px);
 }

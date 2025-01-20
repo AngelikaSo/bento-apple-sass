@@ -43,31 +43,44 @@ p {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap: 5px;
+  gap: 0.31rem;
   width: auto;
   min-height: 100vh;
-  margin: 5px;
+  margin: 0.32rem;
 }
 
 .grid__item {
   background: #efefef;
-  border-radius: 25px;
+  border-radius: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  height: 190px;
+  height: 11.9rem;
+}
+
+.grid__item--center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .grid__item-img {
-  max-height: 100px;
-  margin-bottom: 10px;
+  max-height: 6.25rem;
+  margin-bottom: 0.62rem;
 }
 
 .grid__item-img--hero {
-  max-width: 100%;
+  max-width: 200%;
   max-height: 100%;
+}
+
+.grid__item-img--aside {
+  max-height: 9.4rem;
+  margin-bottom: 2.5rem;
 }
 
 .grid__item--1 {
@@ -90,86 +103,61 @@ p {
   grid-column: 6/span 2;
 }
 
-.grid__item--center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.grid__item--justify {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.grid__item--justify > p {
-  margin-bottom: 5px;
-}
-
 .grid__item--6 {
   grid-column: 1/span 2;
   grid-row: span 2;
-  height: 285px;
+  height: 17.85rem;
 }
 
 .grid__item--7 {
   grid-column: 3/span 3;
   grid-row: span 3;
-  height: 480px;
+  height: 30.06rem;
 }
 
 .grid__item--8 {
   grid-column: 6/span 1;
   grid-row: span 2;
-  height: 385px;
-}
-
-.grid__item-img--aside {
-  max-height: 150px;
-  margin-bottom: 40px;
+  height: 24.11rem;
 }
 
 .grid__item--9 {
   grid-column: 7/span 1;
   grid-row: span 2;
-  height: 385px;
+  height: 24.11rem;
 }
 
 .grid__item--10 {
   grid-column: 1/span 1;
   grid-row: span 1;
-  height: 190px;
+  height: 11.9rem;
   margin-top: -100px;
 }
 
 .grid__item--11 {
   grid-column: 2/span 1;
   grid-row: span 1;
-  height: 190px;
+  height: 11.9rem;
   margin-top: -100px;
 }
 
 .grid__item--12 {
   grid-column: 1/span 2;
   grid-row: span 1;
-  height: 95px;
+  height: 5.95rem;
   margin-top: -100px;
 }
 
 .grid__item--13 {
   grid-column: 3/span 3;
   grid-row: span 1;
-  height: 95px;
+  height: 5.95rem;
   margin-top: -100px;
 }
 
 .grid__item--14 {
   grid-column: 6/span 2;
   grid-row: span 2;
-  height: 190px;
+  height: 11.9rem;
   margin-top: -195px;
 }/*# sourceMappingURL=styles.css.map */
