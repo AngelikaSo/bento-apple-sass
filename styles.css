@@ -8,9 +8,17 @@ body {
 }
 
 p {
-  font-size: 1.5rem;
   font-weight: 300;
   margin: 0;
+}
+
+.grid__item-text--sm {
+  font-size: 1rem;
+}
+
+.grid__item-text--md {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .grid__item-text--lg {
@@ -19,6 +27,16 @@ p {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 700;
+  font-size: 2rem;
+}
+
+.grid__item-text--xl {
+  background: linear-gradient(to right, #c9a9e5, #442f7a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 3.5rem;
 }
 
 .grid {
@@ -36,7 +54,7 @@ p {
   border-radius: 25px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
   height: 190px;
@@ -47,57 +65,78 @@ p {
   margin-bottom: 10px;
 }
 
+.grid__item-img--hero {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .grid__item--1 {
   grid-column: 1/span 1;
-  margin-top: 0;
 }
 
 .grid__item--2 {
   grid-column: 2/span 1;
-  margin-top: 0;
 }
 
 .grid__item--3 {
   grid-column: 3/span 1;
-  margin-top: 0;
 }
 
 .grid__item--4 {
   grid-column: 4/span 2;
-  margin-top: 0;
 }
 
 .grid__item--5 {
   grid-column: 6/span 2;
-  margin-top: 0;
+}
+
+.grid__item--center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.grid__item--justify {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.grid__item--justify > p {
+  margin-bottom: 5px;
 }
 
 .grid__item--6 {
   grid-column: 1/span 2;
   grid-row: span 2;
   height: 285px;
-  margin-top: 0;
 }
 
 .grid__item--7 {
   grid-column: 3/span 3;
   grid-row: span 3;
   height: 480px;
-  margin-top: 0;
 }
 
 .grid__item--8 {
   grid-column: 6/span 1;
   grid-row: span 2;
   height: 385px;
-  margin-top: 0;
+}
+
+.grid__item-img--aside {
+  max-height: 150px;
+  margin-bottom: 40px;
 }
 
 .grid__item--9 {
   grid-column: 7/span 1;
   grid-row: span 2;
   height: 385px;
-  margin-top: 0;
 }
 
 .grid__item--10 {

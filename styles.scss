@@ -2,16 +2,13 @@ $primary: #222;
 $background: #efefef;
 $gradient: linear-gradient(to right, #c9a9e5, #442f7a);
 
-$font-size-sm: 0.875rem; // 14px
-$font-size-md: 1rem; // 16px
-$font-size-lg: 1.25rem; // 20px
-$font-size-xl: 1.5rem; // 24px
+$font-size-sm: 1rem; // 16px
+$font-size-md: 1.5rem; // 24px
+$font-size-lg: 2rem; // 32px
+$font-size-xl: 3.5rem; // 40px
 
 $font-weight-light: 300; // Light
-$font-weight-regular: 400; // Regular
-$font-weight-medium: 500; // Medium
 $font-weight-bold: 700; // Bold
-$font-weight-black: 900; // Black
 
 $border-radious: 25px;
 $grid-gap: 5px;
@@ -24,12 +21,24 @@ $component-margin: 5px;
   background-clip: text;
 }
 
-@mixin flex-centered {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+@mixin flex-centered(
+  $flex: flex,
+  $flex-direction: column,
+  $justify-content: space-around,
+  $align-items: center,
+  $text-align: center
+) {
+  display: $flex;
+  flex-direction: $flex-direction;
+
+  @if $justify-content != space-around {
+    justify-content: $justify-content;
+  } @else {
+    justify-content: space-around;
+  }
+
+  align-items: $align-items;
+  text-align: $text-align;
 }
 
 @mixin img {
@@ -54,7 +63,7 @@ $component-margin: 5px;
     height: $height;
   }
 
-  @if margin-top != 0 {
+  @if $margin-top != 0 {
     margin-top: $margin-top;
   }
 }
@@ -69,13 +78,29 @@ body {
 }
 
 p {
-  font-size: $font-size-xl;
   font-weight: $font-weight-light;
   margin: 0;
 }
+
+.grid__item-text--sm {
+  font-size: $font-size-sm;
+}
+
+.grid__item-text--md {
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+}
+
 .grid__item-text--lg {
   @include text-gradient;
   font-weight: $font-weight-bold;
+  font-size: $font-size-lg;
+}
+
+.grid__item-text--xl {
+  @include text-gradient;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-xl;
 }
 
 .grid {
@@ -99,6 +124,11 @@ p {
   @include img;
 }
 
+.grid__item-img--hero {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .grid__item--1 {
   @include grid-item(1, 1);
 }
@@ -119,6 +149,30 @@ p {
   @include grid-item(6, 2);
 }
 
+.grid__item--center {
+  @include flex-centered(
+    $flex: flex,
+    $flex-direction: column,
+    $justify-content: center,
+    $align-items: center,
+    $text-align: center
+  );
+}
+
+.grid__item--justify {
+  @include flex-centered(
+    $flex: flex,
+    $flex-direction: column,
+    $justify-content: center,
+    $align-items: center,
+    $text-align: center
+  );
+}
+
+.grid__item--justify > p {
+  margin-bottom: 5px;
+}
+
 .grid__item--6 {
   @include grid-item(1, 2, 2, calc(190px * 1.5));
 }
@@ -129,6 +183,11 @@ p {
 
 .grid__item--8 {
   @include grid-item(6, 1, 2, calc(190px * 2 + 5px));
+}
+
+.grid__item-img--aside {
+  max-height: 150px;
+  margin-bottom: 40px;
 }
 
 .grid__item--9 {
