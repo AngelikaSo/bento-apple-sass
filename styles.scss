@@ -10,13 +10,13 @@ $font-size-xl: 3.5rem; // 40px
 $font-weight-light: 300;
 $font-weight-bold: 700;
 
-$border-radious: 1.5rem;
+$border-radius: 1.5rem;
 $grid-gap: 0.31rem;
-$component-margin: 0.32rem;
+//$component-margin: 0.32rem;
 
 //media queries
 $layout-breakpoint-small: 430px;
-$layout-breakpoint-medium: 960px;
+$layout-breakpoint-medium: 1024px;
 
 @mixin text-gradient {
   background: $gradient;
@@ -120,7 +120,7 @@ p {
 
 .grid__item {
   background: $background;
-  border-radius: $border-radious;
+  border-radius: $border-radius;
   @include flex-centered;
   height: 11.9rem;
 }
@@ -217,6 +217,75 @@ p {
   @include grid-item(6, 2, 2, 11.9rem, -195px);
 }
 
+@media (max-width: 1024px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .grid__item {
+    width: 100%;
+    height: auto;
+  }
+
+  .grid__item--1 {
+    @include grid-item(1, 1);
+  }
+
+  .grid__item--2 {
+    @include grid-item(2, 1);
+  }
+
+  .grid__item--3 {
+    @include grid-item(3, 1);
+  }
+
+  .grid__item--4 {
+    @include grid-item(1, 2);
+  }
+
+  .grid__item--5 {
+    @include grid-item(3, 1);
+  }
+
+  .grid__item--6 {
+    @include grid-item(1, 1, 3, calc(11.9rem * 2.5));
+  }
+
+  .grid__item--7 {
+    @include grid-item(2, 3, 3, calc(11.9rem * 2.5 - $grid-gap));
+  }
+
+  .grid__item--8 {
+    @include grid-item(1, 1, 2, calc(11.9rem * 2 + $grid-gap));
+  }
+
+  .grid__item--9 {
+    @include grid-item(2, 1, 2, calc(11.9rem * 2 + $grid-gap));
+  }
+
+  .grid__item--10 {
+    @include grid-item(3, 1, 2, calc(11.9rem * 2), 3px);
+  }
+
+  .grid__item--11 {
+    @include grid-item(1, 1, 1, 11.9rem, 5px);
+  }
+
+  .grid__item--12 {
+    @include grid-item(2, 2, 1, 11.9rem, 5px);
+  }
+
+  .grid__item--13 {
+    @include grid-item(1, 2, 1, 11.9rem, 5px);
+  }
+
+  .grid__item--14 {
+    @include grid-item(3, 1, 1, 11.9rem, 5px);
+  }
+}
+
 @media (max-width: 430px) {
   .grid {
     grid-template-columns: 1fr;
@@ -224,29 +293,6 @@ p {
     gap: 1rem;
     max-width: 430px;
   }
-  /*
-
-  @mixin grid-item(
-  $column-start: 1,
-  $column-span: 1,
-  $row-span: auto,
-  $height: auto,
-  $margin-top: 0
-) {
-  grid-column: $column-start / span $column-span;
-
-  @if $row-span != auto {
-    grid-row: span $row-span;
-  }
-
-  @if $height != auto {
-    height: $height;
-  }
-
-  @if $margin-top != 0 {
-    margin-top: $margin-top;
-  }
-}*/
 
   .grid__item--1 {
     @include grid-item(1, 1);
